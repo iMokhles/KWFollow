@@ -1,0 +1,63 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+		<ion-title>تسجيل دخول</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="background_View">
+	<div class="logo">
+		<img src="../../../assets/kwlogo/logo.png" alt="Ionic logo">
+	</div>
+
+	<!-- <ion-label stacked color="visitorsColor" class="ion_label">...أهلا بك! الرجاء تسجيل الدخول</ion-label> -->
+	<ion-card >
+		<ion-card-header class="ion_label_title">
+			...أهلا بك! الرجاء تسجيل الدخول
+  	</ion-card-header>
+		<ion-card-content>
+			<form #loginForm="ngForm" novalidate>
+				<ion-list>
+					<ion-item class="item-icon-right">
+						<ion-label stacked class="ion_label_validate" [hidden]="username.valid || submitted == false" color="danger">إسم المستخدم مطلوب</ion-label>
+						<!-- <ion-label floating class="ion_label_input">إسم المستخدم</ion-label> -->
+						<ion-input  [(ngModel)]="login.username" class="inputUserName" placeholder="إسم المستخدم" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+							required>
+						</ion-input>
+						<button ion-button class="icon_button_text" icon-only item-right>
+		              <span class="glyphicon glyphicon-user"></span>
+		        </button>
+					</ion-item>
+				<br>
+					<ion-item>
+						<ion-label stacked class="ion_label_validate" [hidden]="password.valid || submitted == false" color="danger">كلمة المرور مطلوبه</ion-label>
+						<!-- <ion-label floating class="ion_label_input">كلمة المرور</ion-label> -->
+						<ion-input [(ngModel)]="login.password" class="inputUserName" placeholder="كلمة المرور" name="password" type="password" #password="ngModel" required>
+						</ion-input>
+						<button ion-button class="icon_button_text" icon-only item-right>
+		              <span class="glyphicon glyphicon-lock"></span>
+		        </button>
+					</ion-item>
+				</ion-list>
+				<br>
+				<ion-buttons right> <!--- ...and this here -->
+					<button clear class="forget_button_text" (click)="presentResetPasswordAlert()" type="submit">نسيت كلمة المرور؟</button>
+				</ion-buttons>
+				<br>
+				<ion-buttons right> <!--- ...and this here -->
+					<button ion-button class="button_text" color="kwfollowColor" (click)="onLogin(loginForm)" type="submit" block>تسجيل دخول</button>
+				</ion-buttons>
+			</form>
+  	</ion-card-content>
+	</ion-card>
+	<ion-label class="ion_label_title">ليس لديك حساب؟</ion-label>
+	<ion-buttons right> <!--- ...and this here -->
+		<button ion-button class="button_text" color="dark" (click)="onSignup()" type="submit">مستخدم جديد؟</button>
+	</ion-buttons>
+	<br>
+	<br>
+</ion-content>

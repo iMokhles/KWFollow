@@ -1,0 +1,75 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+		<ion-title>فتح حساب جديد</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="background_View">
+	<div class="logo">
+		<img src="../../../assets/kwlogo/logo.png" alt="Ionic logo">
+	</div>
+
+	<!-- <ion-label stacked color="visitorsColor" class="ion_label">...أهلا بك! الرجاء تسجيل الدخول</ion-label> -->
+	<ion-card>
+		<ion-card-header class="ion_label_title">
+			...فتح حساب جديد
+  	</ion-card-header>
+		<ion-card-content>
+			<form #signupForm="ngForm" novalidate>
+				<ion-list>
+					<ion-item class="item-icon-right">
+						<ion-label stacked class="ion_label" [hidden]="email.valid || submitted == false" color="danger">بريدك الالكتروني مطلوب</ion-label>
+						<!-- <ion-label floating class="ion_label_input">إسم المستخدم</ion-label> -->
+						<ion-input  [(ngModel)]="signup.email" class="inputUserName" placeholder="بريدك الالكتروني " name="email" type="email" #email="ngModel" spellcheck="false" autocapitalize="off"
+							required>
+						</ion-input>
+						<button ion-button class="icon_button_text" icon-only item-right>
+		              <span class="glyphicon glyphicon-envelope"></span>
+		        </button>
+					</ion-item>
+				<br>
+					<ion-item class="item-icon-right">
+						<ion-label stacked class="ion_label" [hidden]="username.valid || submitted == false" color="danger">إسم المستخدم مطلوب</ion-label>
+						<!-- <ion-label floating class="ion_label_input">إسم المستخدم</ion-label> -->
+						<ion-input  [(ngModel)]="signup.username" class="inputUserName" placeholder="إسم المستخدم" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+							required>
+						</ion-input>
+						<button ion-button class="icon_button_text" icon-only item-right>
+		              <span class="glyphicon glyphicon-user"></span>
+		        </button>
+					</ion-item>
+				<br>
+					<ion-item>
+						<ion-label stacked class="ion_label" [hidden]="password.valid || submitted == false" color="danger">كلمة المرور مطلوبه</ion-label>
+						<!-- <ion-label floating class="ion_label_input">كلمة المرور</ion-label> -->
+						<ion-input [(ngModel)]="signup.password" class="inputUserName" placeholder="كلمة المرور" name="password" type="password" #password="ngModel" required>
+						</ion-input>
+						<button ion-button class="icon_button_text" icon-only item-right>
+		              <span class="glyphicon glyphicon-lock"></span>
+		        </button>
+					</ion-item>
+					<br>
+						<ion-item>
+							<ion-label stacked class="ion_label" [hidden]="password2.valid || submitted == false" color="danger">كلمة المرور مطلوبه</ion-label>
+							<!-- <ion-label floating class="ion_label_input">كلمة المرور</ion-label> -->
+							<ion-input [(ngModel)]="signup.password2" class="inputUserName" placeholder="تأكيد كلمة المرور" name="password2" type="password" #password2="ngModel" required>
+							</ion-input>
+							<button ion-button class="icon_button_text" icon-only item-right>
+			              <span class="glyphicon glyphicon-lock"></span>
+			        </button>
+						</ion-item>
+				</ion-list>
+
+				<ion-buttons right> <!--- ...and this here -->
+					<button ion-button class="button_text" color="secondary" (click)="onSignup(signupForm)" type="submit" block>تسجيل</button>
+				</ion-buttons>
+			</form>
+  	</ion-card-content>
+	</ion-card>
+	<br>
+</ion-content>

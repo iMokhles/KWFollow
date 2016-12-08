@@ -1,0 +1,78 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-login {
+  .logo {
+    padding: 20px 0;
+    min-height: 200px;
+    text-align: center;
+
+    img {
+      width: 60%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  .p_text {
+    text-align: right;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+  }
+  .forget_button_text {
+    text-align: center;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+    color: #47639E;
+    background-color: transparent;
+  }
+  .icon_button_text {
+    text-align: center;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+    color: #47639E;
+    background-color: transparent;
+  }
+  .button_text {
+    text-align: center;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+    color: #fff;
+  }
+  .ion_label_title {
+    text-align: right;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+  }
+  .ion_label_validate {
+    text-align: right;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+  }
+  .ion_label_input {
+    text-align: right;
+    font-size: 16px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+  }
+  .item.item-input {
+    color: #000;
+    background-color: #fff;
+  }
+  .inputUserName {
+      .text-input {
+        padding: 0px;
+        padding-right: -10px;
+        text-align: right;
+        border-radius: 5px;
+        border-width: thin;
+        border-color: #000;
+      }
+  }
+  .background_View{
+     background-image: url('../assets/backgrounds/background.jpeg');
+     background-repeat: repeat;
+     background-size: auto;
+   }
+  .list {
+    margin-bottom: 0;
+  }
+}

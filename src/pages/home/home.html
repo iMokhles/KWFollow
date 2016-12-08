@@ -1,0 +1,84 @@
+<html lang="ar" dir="rtl"> 
+<ion-header>
+	<ion-navbar>
+		<ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+		<ion-title class="center">كويتي فولو</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding class="background_View">
+	<ion-label class="ion_label_header" color="000000">طلب جديد</ion-label>
+	<ion-card class=".alert-info">
+		<ion-card-content>
+			<div class="col-md-12">
+                        
+			<div class="alert alert-info">
+                1- الأسعار لكل 1000 متابع أو لايك&nbsp;
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">2- عند طلب متابعين أو لايكات إنستقرام يرجى التأكد من أن حالة الحساب " عام " وليس خاص</div>
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">3- لا يتم إلغاء الطلب و إرجاع المبلغ في حال أصبح الحساب في إنستقرام خاص او تم تغيير اليوزر خلال العمل,<span style="font-weight: 700;">&nbsp;ويعتبر الطلب مكتمل!</span></div>
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">4- لاتطلب الخدمة لحساب قد طلبت له من مكان اخر في نفس الوقت. انظمتنا تعتمد على عدد البدء<br></div>
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">5- لاتطلب لحساب له طلب اخر مازال قيد التنفيذ.</div>
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;"><span style="font-weight: 700;">٧- لايمكن ولا بأي حال من الاحوال إلغاء الطلب بعد وضعه في السيرفر, تآكد من الطلب قبل تآكيد العملية.</span></div>
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">٨- يمنع الطلب للحسابات ( السياسية ، التطرف ، حسابات الأغاني و الديجي بجميع أنواعها ، الجنسية بجميع أنواعها )&nbsp;</div>
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">٨- عند وضعك لأي طلب تعتبر موافق على كافة <a href="http://kwfollow.com/page-terms" target="_blank">شروط الأستخدام&nbsp;&nbsp;</a><span style="-webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%;"> في kwfollow.</span>
+				</div>
+				
+				<div style="font-family: &quot;JF Flat Regular&quot;, Tahoma, sans-serif; line-height: 18.5714px; border-radius: 0px !important;">
+					<br>
+				</div>            
+			</div>
+        </div>
+		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label stacked class="ion_label_title" color="f4f4f4">اختر الخدمة</ion-label>
+				<ion-select [(ngModel)]="mainservice" #item (ionChange)="onChange(mainservice)" no-lines>
+					<ion-option value="0" selected="true">منشن</ion-option>
+					<ion-option value="1">إنستقرام</ion-option>
+					<ion-option value="2">تويتر</ion-option>
+					<ion-option value="3">سناب شات</ion-option>
+					<ion-option value="4">أوتو لايك</ion-option>
+					<ion-option value="5">أوتو كومنت</ion-option>
+					<ion-option value="6">اوتو ريتويت</ion-option>
+					<ion-option value="7">اوتو مشاهدة</ion-option>
+					<ion-option value="8">تعليقات على صورة</ion-option>
+					<ion-option value="9">فيسبوك</ion-option>
+					<ion-option value="10">يوتيوب</ion-option>
+					<ion-option value="11">زوار</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-content>
+			<ion-list no-lines>
+				<ion-item class="item_header">
+					<ion-label class="ion_label_input" color="f4f4f4">{{mainserviceString}}: طلب جديد</ion-label>
+				</ion-item>
+				<ion-item>
+				<ion-label stacked class="ion_label_title" color="f4f4f4">اختر طلب</ion-label>
+				<ion-select [(ngModel)]="mainserviceCurrentString" #item (ionChange)="onChangeMini(mainserviceCurrentString)" no-lines>
+					<ion-option class="ion_label_title" *ngFor="let servs of servicesCurrent; let i=index" [selected]="i == 0" value="{{servs.id}}">{{servs.service}}</ion-option>
+				</ion-select>
+				</ion-item>
+				<ion-item>
+				<ion-label stacked class="ion_label_title" color="f4f4f4">الرابط</ion-label>
+				<ion-input  [(ngModel)]="order.url" class="inputURL" placeholder="رابط الحساب" name="url" type="url" #url="ngModel" spellcheck="false" autocapitalize="off"
+							required></ion-input>
+			</ion-item>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
+ </html> 

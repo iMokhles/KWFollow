@@ -1,0 +1,47 @@
+<html lang="ar" dir="rtl">
+<ion-header>
+	<ion-navbar>
+		<ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+		<ion-title>سجل الطلبات</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="background_View">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="إسحب للتحديث"
+      refreshingSpinner="circles"
+      refreshingText="جاري التحديث">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngFor="let order of orders" no-lines>
+        <ion-item>
+            <h2 align="right"><b>{{order.service}}</b></h2>
+            <p align="right"><b>رقم الطلب</b> {{order.id}}</p>
+            <p align="right"><b>التاريخ</b> {{order.created}}</p>
+            <p align="right"><b>الرابط</b> <a href="#" (click)="openLink(order.link)">{{order.link}}</a></p>
+            <p align="right"><b>الكمية</b> {{order.quantity}}</p>
+            <p align="right"><b>العدد الحالي</b> {{order.current_count}}</p>
+            <p align="right"><b>العدد النهائي</b>{{order.final_count}}</p>
+            <p align="right"><b>القيمة</b>{{order.charge}}</p>
+            <p align="right"><b>ملاحظة</b> :{{order.remark}}</p>
+            <p align="right" *ngIf="order.status === 'completed'"><b>حالة الطلب</b>: مكتمل</p>
+            <p align="right" *ngIf="order.status === 'canceled'"><b>حالة الطلب</b>: ملغي</p>
+            <p align="right" *ngIf="order.status === 'waiting'"><b>حالة الطلب</b>: في الانتظار</p>
+            <p align="right" *ngIf="order.status === 'progressing'"><b>حالة الطلب</b>: جاري التنفيذ</p>
+            <p align="right" *ngIf="order.status === 'partial'"><b>حالة الطلب</b>: مكتمل جزئياُ</p>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="isLoading">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="تحديث">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+</html>
