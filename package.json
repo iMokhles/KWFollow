@@ -1,7 +1,8 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "kwfollow-app",
+  "author": "Mokhlas Hussein",
+  "homepage": "http://imokhles.com",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "ionic:build": "ionic-app-scripts build",
@@ -44,5 +45,5 @@
       "locator": "ios"
     }
   ],
-  "description": "KWFollow: An Ionic project"
+  "description": "KWFollow: social networks services"
 }

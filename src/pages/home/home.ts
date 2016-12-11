@@ -28,7 +28,7 @@ export class ArrayFilterPipe implements PipeTransform {
 })
 export class HomePage {
 
-  order: {url?: string, quantity?: string} = {};
+  order: {url?: string, quantity?: string, usernames?: string, comments?: string} = {};
   services: servicemodel[];
   servicesCurrent: servicemodel[];
 
@@ -37,6 +37,9 @@ export class HomePage {
 
   mainserviceCurrent: string = "0";
   mainserviceCurrentString: string = "";
+
+  notMention = false;
+  notComments = true;
 
   constructor(public navCtrl: NavController,
     public menu: MenuController,
@@ -67,39 +70,63 @@ export class HomePage {
     if (value == 0) {
       this.mainserviceString = "منشن";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = false;
+      this.notComments = true;
     } else if (value == 1) {
       this.mainserviceString = "إنستقرام";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 2) {
       this.mainserviceString = "تويتر";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 3) {
       this.mainserviceString = "سناب شات";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 4) {
       this.mainserviceString = "أوتو لايك";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 5) {
       this.mainserviceString = "أوتو كومنت";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = false;
     } else if (value == 6) {
       this.mainserviceString = "اوتو ريتويت";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 7) {
       this.mainserviceString = "اوتو مشاهدة";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 8) {
       this.mainserviceString = "تعليقات علي صورة";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = false;
     } else if (value == 9) {
       this.mainserviceString = "فيسبوك";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 10) {
       this.mainserviceString = "يوتيوب";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     } else if (value == 11) {
       this.mainserviceString = "زوار";
       this.servicesCurrent = this.services.filter(record => record.groupe === this.mainserviceString);
+      this.notMention = true;
+      this.notComments = true;
     }
     // console.log("HERERERE");
     // console.log("Value Selected: "+value);

@@ -23,7 +23,7 @@ export class TutorialPage {
       {
         title: 'مرحبا بك في كويتي فولو',
         description: 'كويتي فولو لخدمات تواصل الإحتماعي: •متابعين •رتويت •مفضله •جميع خدمات تواصل الإجتماعي بمكان واحد',
-        image: '../../../assets/kwlogo/logo.png',
+        image: 'assets/kwlogo/logo.png',
       }
     ];
   }

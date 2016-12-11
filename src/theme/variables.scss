@@ -73,6 +73,12 @@ $card-wp-background-color: #fff;
 // default are overridden.
 
 @font-face {
+    font-family: 'CoHeadlineW23-ArabicRegular';
+    src: url(../assets/fonts/4Font.eot);
+    src: url(../assets/fonts/1Font.woff2) format('woff2'), url(../assets/fonts/2Font.woff) format('woff'), url(../assets/fonts/3Font.ttf) format('truetype')
+}
+
+@font-face {
     font-family: 'Glyphicons Halflings';
     src: url(../assets/fonts/glyphicons-halflings-regular.eot);
     src: url(../assets/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../assets/fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(../assets/fonts/glyphicons-halflings-regular.woff) format('woff'), url(../assets/fonts/glyphicons-halflings-regular.ttf) format('truetype')

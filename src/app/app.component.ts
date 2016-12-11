@@ -38,17 +38,17 @@ export class KWFollowApp {
 
   notifications = [];
   loggedInPages: PageInterface[] = [
-    { title: 'الرئيسية', component: HomePage, icon: 'ion-md-home' },
-    { title: 'حسابي', component: AccountPage, icon: 'ion ion-md-person' },
-    { title: 'الاشعارات', component: NotificationsPage, icon: 'ion ion-md-notifications' },
-    { title: 'سجل الطلبات', component: HistoryPage, icon: 'ion ion-md-list-box' },
-    { title: 'معلومات', component: InstructionsPage, icon: 'ion ion-md-help' },
-    { title: 'حول التطبيق', component: InfoPage, icon: 'ion ion-md-information-circle'}
+    { title: 'الرئيسية', component: HomePage, icon: 'assets/list_icons/home.png' },
+    { title: 'حسابي', component: AccountPage, icon: 'assets/list_icons/account.png' },
+    { title: 'الاشعارات', component: NotificationsPage, icon: 'assets/list_icons/notifications.png' },
+    { title: 'سجل الطلبات', component: HistoryPage, icon: 'assets/list_icons/history.png' },
+    { title: 'معلومات', component: InstructionsPage, icon: 'assets/list_icons/notes.png' },
+    { title: 'حول التطبيق', component: InfoPage, icon: 'assets/list_icons/info.png'}
   ];
   loggedOutPages: PageInterface[] = [
-    { title: 'تسجيل دخول', component: LoginPage, icon: 'ion ion-md-log-in' },
-    { title: 'معلومات', component: InstructionsPage, icon: 'ion ion-md-help' },
-    { title: 'حول التطبيق', component: InfoPage, icon: 'ion ion-md-information-circle' }
+    { title: 'تسجيل دخول', component: LoginPage, icon: 'assets/list_icons/login.png' },
+    { title: 'معلومات', component: InstructionsPage, icon: 'assets/list_icons/notes.png' },
+    { title: 'حول التطبيق', component: InfoPage, icon: 'assets/list_icons/info.png' }
   ];
   rootPage: any;
 
@@ -66,6 +66,7 @@ export class KWFollowApp {
       // Here you can do any higher level native things you might need.
       this.oneSignal();
       StatusBar.styleDefault();
+      // StatusBar.overlaysWebView(false);
       Splashscreen.hide();
     });
     // Check if the user has already seen the tutorial
@@ -102,7 +103,7 @@ export class KWFollowApp {
 
   oneSignal() {
         if(this.platform.is('cordova') && OneSignal){
-            OneSignal.startInit('4dc251ad-0ac6-4f5f-8ff0-3b8b45ac5d22', '');
+            OneSignal.startInit('4dc251ad-0ac6-4f5f-8ff0-3b8b45ac5d22', '121922309077');
 
             OneSignal.inFocusDisplaying(OneSignal.OSInFocusDisplayOption.InAppAlert);
 

@@ -39,10 +39,11 @@
         </div>
 		</ion-card-content>
 	</ion-card>
+	<br>
 	<ion-card>
 		<ion-card-content>
 			<ion-item>
-				<ion-label stacked class="ion_label_title" color="f4f4f4">اختر الخدمة</ion-label>
+				<ion-label stacked class="ion_label_title" color="f4f4f4">القسم</ion-label>
 				<ion-select [(ngModel)]="mainservice" #item (ionChange)="onChange(mainservice)" no-lines>
 					<ion-option value="0" selected="true">منشن</ion-option>
 					<ion-option value="1">إنستقرام</ion-option>
@@ -58,26 +59,43 @@
 					<ion-option value="11">زوار</ion-option>
 				</ion-select>
 			</ion-item>
-		</ion-card-content>
-	</ion-card>
-	<ion-card>
-		<ion-card-content>
-			<ion-list no-lines>
-				<ion-item class="item_header">
-					<ion-label class="ion_label_input" color="f4f4f4">{{mainserviceString}}: طلب جديد</ion-label>
-				</ion-item>
+			<!--<ion-item class="item_header">-->
+					<!--<ion-label class="ion_label_input" color="f4f4f4">{{mainserviceString}}: طلب جديد</ion-label>-->
+				<!--</ion-item>-->
 				<ion-item>
-				<ion-label stacked class="ion_label_title" color="f4f4f4">اختر طلب</ion-label>
+				<ion-label stacked class="ion_label_title" color="f4f4f4">الخدمة</ion-label>
 				<ion-select [(ngModel)]="mainserviceCurrentString" #item (ionChange)="onChangeMini(mainserviceCurrentString)" no-lines>
-					<ion-option class="ion_label_title" *ngFor="let servs of servicesCurrent; let i=index" [selected]="i == 0" value="{{servs.id}}">{{servs.service}}</ion-option>
+					<ion-option *ngFor="let servs of servicesCurrent; let i=index" value="{{servs.id}}">{{servs.service}}</ion-option>
 				</ion-select>
 				</ion-item>
 				<ion-item>
-				<ion-label stacked class="ion_label_title" color="f4f4f4">الرابط</ion-label>
-				<ion-input  [(ngModel)]="order.url" class="inputURL" placeholder="رابط الحساب" name="url" type="url" #url="ngModel" spellcheck="false" autocapitalize="off"
-							required></ion-input>
-			</ion-item>
-			</ion-list>
+					<ion-label stacked class="ion_label_title" color="f4f4f4">الرابط</ion-label>
+					<ion-input  [(ngModel)]="order.url" class="inputURL" placeholder="رابط الحساب" name="url" type="url" #url="ngModel" spellcheck="false" autocapitalize="off"
+								required></ion-input>
+				</ion-item>
+				<ion-item [hidden]="notMention == true">
+					<ion-label stacked class="ion_label_title" color="f4f4f4">سحب منشن من</ion-label>
+					<ion-input class="ion_label_title"  [(ngModel)]="order.usernames" class="inputURL" placeholder="حسابات مثال: @user1,@user2" name="usernames" type="text" #usernames="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+				</ion-item>
+				<ion-item [hidden]="notComments == true">
+					<ion-label stacked class="ion_label_title" color="f4f4f4">التعليق المطلوب</ion-label>
+					<ion-textarea rows="6" class="ion_label_title"  [(ngModel)]="order.comments" class="inputURL" placeholder="كل تعليق بسطر" name="comments" type="text" #comments="ngModel" spellcheck="false" autocapitalize="off" required></ion-textarea>
+				</ion-item>
+				<ion-item>
+					<ion-label stacked class="ion_label_title" color="f4f4f4">الكمية</ion-label>
+					<ion-input class="ion_label_title"  [(ngModel)]="order.quantity" class="inputURL" placeholder="o" name="quantity" type="number" #quantity="ngModel"required></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label stacked class="ion_label_title" color="f4f4f4">السعر</ion-label>
+					<ion-input disabled="true" class="ion_label_title"  [(ngModel)]="order.quantity" class="inputURL" placeholder="" name="quantity" type="text" #quantity="ngModel"required></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label class="textAreaClass" > لقد راجعت الطلب ومتأكد منه، أيضاً قرأت الملاحظات كاملة في أعلى الصفحة وموافق عليها. </ion-label>
+					<ion-checkbox  color="dark" checked="false" item-left></ion-checkbox>
+				</ion-item>
+				<ion-buttons right> <!--- ...and this here -->
+					<button ion-button color="dark" outline small>إرسال</button>
+				</ion-buttons>
 		</ion-card-content>
 	</ion-card>
 </ion-content>

@@ -19,6 +19,40 @@ page-account {
    .center{
         text-align:center;
    }
+   .icon_button_text {
+    text-align: center;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+    color: #47639E;
+    background-color: transparent;
+  }
+  .ion_label_validate {
+    text-align: right;
+    font-size: 15px;
+    font-family: "CoHeadlineW23-ArabicRegular";
+    color: #000;
+  }
+   .inputUserName {
+      .text-input {
+        padding: 0px;
+        padding-right: -10px;
+        text-align: right;
+        border-radius: 5px;
+        border-width: thin;
+        border-color: #000;
+      }
+  }
+  .inputCredit {
+      .text-input {
+        padding: 0px;
+        padding-right: -10px;
+        text-align: right;
+        border-radius: 5px;
+        border-width: thin;
+        border-color: #47639E;
+        color: green
+      }
+  }
    .ion_label_title {
      color: #000;
      text-align: right;

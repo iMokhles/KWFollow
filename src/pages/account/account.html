@@ -10,6 +10,31 @@
 	</ion-navbar>
 </ion-header>
 <ion-content padding class="background_View">
-	<ion-label class="ion_label_header" color="000000">تعديل البيانات</ion-label>
+      <ion-card-content>
+			<ion-list no-lines>
+
+                <ion-item class="item_header">
+					<ion-label class="ion_label_input" color="f4f4f4">بيانات حسابك</ion-label>
+				</ion-item>
+					<ion-item class="item-icon-right">
+						<ion-label class="ion_label_validate" color="000000">بريدك الالكتروني</ion-label>
+						<ion-input  [(ngModel)]="account.email" class="inputUserName" disabled="true" placeholder="بريدك الالكتروني" name="email" type="email" #email="ngModel" spellcheck="false" autocapitalize="off"
+							required>
+						</ion-input>
+					</ion-item>
+                    <ion-item class="item-icon-right">
+						<ion-label class="ion_label_validate" color="000000">إسم المستخدم</ion-label>
+						<ion-input  [(ngModel)]="account.username" class="inputUserName" disabled="true" placeholder="إسم المستخدم" name="username" type="username" #username="ngModel" spellcheck="false" autocapitalize="off"
+							required>
+						</ion-input>
+					</ion-item>
+                    <ion-item class="item-icon-right" >
+						<ion-label class="ion_label_validate" color="000000">رصيدك الحالي</ion-label>
+						<ion-input  [(ngModel)]="account.credit" class="inputCredit" disabled="true" placeholder="رصيدك الحالي" name="credit" type="text" #credit="ngModel" spellcheck="false" autocapitalize="off"
+							required>
+						</ion-input>
+					</ion-item>
+				</ion-list>
+  	</ion-card-content>
 </ion-content>
 </html>

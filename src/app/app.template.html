@@ -12,7 +12,10 @@
     <ion-list no-lines>
       <ion-buttons end>
         <button ion-item detail-none item-right menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">
-          <ion-icon item-right [class]="p.icon"></ion-icon>
+          <!--<ion-icon item-right [class]="p.icon"></ion-icon>-->
+          <ion-avatar class="icon_avatar" item-right>
+            <img class="icon_avatar" src="{{p.icon}}">
+          </ion-avatar>
           <span class="button-inner">
               {{p.title}}
           </span>
@@ -37,7 +40,10 @@
     <ion-list no-lines>
       <ion-buttons end>
         <button ion-item detail-none item-right menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
-          <ion-icon item-right [class]="p.icon"></ion-icon>
+          <!--<ion-icon item-right [class]="p.icon"></ion-icon>-->
+          <ion-avatar class="icon_avatar" item-right>
+            <img class="icon_avatar" src="{{p.icon}}">
+          </ion-avatar>
           <span class="button-inner">
               {{p.title}}
           </span>
@@ -45,7 +51,9 @@
       </ion-buttons>
       <ion-buttons end>
         <button ion-item detail-none item-right menuClose (click)="logOut()">
-          <ion-icon item-right class="ion ion-ios-log-out"></ion-icon>
+          <ion-avatar class="icon_avatar" item-right>
+            <img class="icon_avatar" src="assets/list_icons/logout.png">
+          </ion-avatar>
           <span class="button-inner">
             تسجيل خروج
           </span>
